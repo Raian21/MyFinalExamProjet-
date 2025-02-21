@@ -1,0 +1,21 @@
+name:  Automation modification
+
+# Déclencheur pour le push et la pull request
+on:
+  push:
+    branches:
+      - main  # Spécifiez la branche souhaitée
+  pull_request:
+    branches:
+      - main  # Spécifiez la branche souhaitée
+
+jobs:
+  example-job:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Afficher un message
+      run: echo "Le commit a été effectué avec succès !"
